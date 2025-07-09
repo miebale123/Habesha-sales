@@ -1,3 +1,4 @@
+import { style } from "./style.ts";
 import { useEffect, useState } from "react";
 
 const ALL_PRODUCTS = [
@@ -55,42 +56,40 @@ export default function App() {
 
     return (
         <div>
-            <span>Habesha buy here</span>
+            <span className={style.title}>Habesha,  buy here!</span>
             <div>
                 <input
                     type="text"
-                    className="border m-12"
+                    className={style.input}
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                 />
-                <div className="flex justify-between ">
-                    <div>
-                        {visibleProducts.length !== 0 ? (
-                            <ul>
-                                {visibleProducts.map((product) => (
-                                    <li
-                                        key={product.id}
-                                        className="grid grid-cols-3 gap-10 m-1"
+                <div>
+                    {visibleProducts.length !== 0 ? (
+                        <ul>
+                            {visibleProducts.map((product) => (
+                                <li
+                                    key={product.id}
+                                    className={style.productListItem}
+                                >
+                                    <span>{product.name}</span>
+                                    <span>{product.price}</span>
+                                    <button
+                                        onClick={() => {
+                                            handleToCart(product.id);
+                                        }}
+                                        className={style.addButton}
                                     >
-                                        <span>{product.name}</span>
-                                        <span>{product.price}</span>
-                                        <button
-                                            onClick={() => {
-                                                handleToCart(product.id);
-                                            }}
-                                            className="bg-indigo-600 text-white px-1 "
-                                        >
-                                            to cart
-                                        </button>
-                                    </li>
-                                ))}
-                            </ul>
-                        ) : (
-                            <p>{"product not found"}</p>
-                        )}
-                    </div>
+                                        to cart
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>{"product not found"}</p>
+                    )}
 
-                    <ul>
+                    {/* <ul>
                         {cart.map((product) => (
                             <li
                                 key={product.id}
@@ -100,13 +99,13 @@ export default function App() {
                                 <span>{product.price}</span>
                                 <button
                                     onClick={() => handleRemoveCart(product.id)}
-                                    className="bg-amber-500 px-1 "
+                                    className={style.removeButton}
                                 >
                                     x
                                 </button>
                             </li>
                         ))}
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
         </div>
