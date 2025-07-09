@@ -53,10 +53,6 @@ export default function App() {
         setCart(filtered);
     }
 
-    const [signup, setSignup] = useState(false);
-    const [password, setPassword] = useState("");
-    const [message, setMessage] = useState("please enter password");
-
     return (
         <div>
             <span>Habesha buy here</span>
@@ -80,9 +76,7 @@ export default function App() {
                                         <span>{product.price}</span>
                                         <button
                                             onClick={() => {
-                                                signup
-                                                    ? handleToCart(product.id)
-                                                    : false;
+                                                handleToCart(product.id);
                                             }}
                                             className="bg-indigo-600 text-white px-1 "
                                         >
