@@ -1,4 +1,4 @@
-export default function App() {
+export default function Tiwaf() {
     return (
         <div className="relative min-h-screen bg-gray-100">
             hello
@@ -12,10 +12,9 @@ export default function App() {
                     </div>
                 </div>
 
-                <button className="text-2xl border p-16 bg-indigo-500 hover:cursor-pointer">
-                    Tiwaf Sales Go
-                </button>
             </div>
         </div>
     );
 }
+
+

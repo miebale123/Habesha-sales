@@ -1,55 +1,13 @@
 @import "tailwindcss";
 
-*,
-*:before,
-*:after {
-    margin: 0;
-    padding: 0;
-    word-break: break-all;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
 
-html {
-    font-size: 10px;
-}
-
-body {
-    font-family: "Ubuntu", sans-serif;
-    color: #6e6e6e;
-    font-size: 1.6rem;
-    background: black;
-}
-
-header,
-footer {
-    display: block;
-}
-
-a,
-a:link,
-a:visited {
-    text-decoration: none;
-}
-
-img {
-    border: 0;
-}
-
-ul {
-    list-style: none;
-}
-
-.center {
-    width: 1170px;
-    margin: 20px auto 0;
-}
 
 .holder {
-    margin: 12rem auto 0;
+    
     width: 150px;
     height: 400px;
-    position: relative;
+    position: absolute;
+    left: 200px;
 }
 
 .holder *,
